@@ -1,36 +1,23 @@
-import PropTypes from "prop-types";
-import './App.css';
-import Shapes from './components/shapes/shapes'
-import Logos from './components/logos/logos'
-import {ReactComponent as MakeLogo} from './logo.svg'
-import {ReactComponent as ReactLogo} from './react-logo.svg'
+import {Route, Routes} from 'react-router-dom'
+import Deepak from './components/Deepak'
+import Header from './components/Header'
+import SaiNaveen from './components/SaiNaveen'
+import Sathwik from './components/Sathwik'
+import Venkat from './components/Venkat'
+import Ramya from './components/Ramya'
+import Dhathrija from './components/Dhathrija'
 
-function App({ headline, showLogos, backgroundImage }) {
-  return (
-    <div className="App" style={{ backgroundImage: `url('${backgroundImage}')` }}>
-      {showLogos && (
-        <Logos logoOne={<MakeLogo />} logoTwo={<ReactLogo />} />
-      )}
-
-      <h1>{headline}</h1>
-
-      <div className="shape-container">
-        <Shapes />
-      </div>
-    </div>
-  );
-}
-
-App.propTypes = {
-  headline: PropTypes.string,
-  showLogos: PropTypes.string,
-  backgroundImage: PropTypes.string,
-}
-
-App.defaultProps = {
-  headline: 'Hello World',
-  showLogos: true,
-  backgroundImage: '',
-}
-
-export default App;
+const App =() => (
+  <>
+  <Header />
+   <Routes>
+  <Route exact path="/" element={<Deepak />} />
+  <Route exact path="/sainaveen" element={<SaiNaveen />} />
+  <Route exact path="/sathwik" element={<Sathwik />} />
+  <Route exact path="/venkat" element={<Venkat />} />
+  <Route exact path="/ramya" element={<Ramya />} /> 
+  <Route exact path="/dhathrija" element={<Dhathrija />} /> 
+  </Routes> 
+  </>
+)
+export default App
