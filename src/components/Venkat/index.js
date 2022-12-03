@@ -5,7 +5,7 @@ export default class Venkat extends Component {
   render() {
     return (
       <div>
-          <h1>Venkat</h1>
+          <h1 class ="m">Venkat</h1>
       </div>
     )
   }
